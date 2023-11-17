@@ -7,8 +7,6 @@ from spacymoji import Emoji
 from sklearn.base import BaseEstimator, TransformerMixin
 
 
-
-
 # Setting SpaCy in English
 nlp = spacy.load("en_core_web_sm")
 

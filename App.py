@@ -1,6 +1,5 @@
 import streamlit as st
 
-
 # Configurar la información personalizada en la sección "About"
 about_text = """
 **YouTube NLP Comments. Grupo 1**
@@ -28,8 +27,7 @@ image = 'YT_logo.png'
 img_width = 250
 img_height = 250
 
-
-col1, col2 = st.columns([0.2,0.9],)
+col1, col2 = st.columns([0.2, 0.9], )
 with st.container():
     with col1:
         st.image(image, width=img_width)
@@ -37,9 +35,8 @@ with st.container():
         st.header("YouTube NLP Comments Prediction App")
         st.subheader('Natural Language Processing.')
 
-col3,col4 = st.columns([0.7,0.3],)
+col3, col4 = st.columns([0.7, 0.3], )
 with col3:
-
     st.write(" ")
     st.write(" ")
     st.write(" ")
@@ -48,7 +45,7 @@ with col3:
     the platform faces a significant challenge in maintaining a safe and positive environment for its users. 
     The escalation of these messages has surpassed the capacity of manual moderation, and increasing the moderation 
     team becomes impractical both in terms of cost and scalability.
-    
+
     In response to this issue, YouTube has decided to partner with our consultancy in search of a practical and 
     automated solution to detect hate messages. The goal is to implement an effective tool that can automatically 
     identify these messages, providing a quick and accurate response without relying solely on human intervention.
