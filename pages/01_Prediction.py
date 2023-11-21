@@ -14,7 +14,7 @@ from preprocessing.preprocessing import preprocess_text, tokenize_text, remove_s
 
 # Configurar la información personalizada en la sección "About"
 about_text = """
-**YouTube NLP Comments. Grupo 1**
+**YouTube Hate Speech Detection. Grupo 1**
 
 **Coders:**
 - Ana Milena Gómez Giraldo
@@ -26,7 +26,7 @@ about_text = """
 """
 # Page Configuration
 st.set_page_config(
-    page_title="YouTube NLP Predict App",
+    page_title="YouTube Hate Speech Detection App",
     page_icon="🍿",
     layout="wide",
     initial_sidebar_state="auto",
@@ -54,8 +54,11 @@ path_to_pipeline = os.environ.get('PATH_TO_PIPELINE')
 cloud_storage_path = os.getenv("PATH_TO_PIPELINE_AWS")
 
 # Leer el contenido del archivo desde S3
-with s3.open(cloud_storage_path, 'rb') as s3_file:
-    loaded_pipeline = pickle.load(s3_file)
+try:
+    with s3.open(cloud_storage_path, 'rb') as s3_file:
+        loaded_pipeline = pickle.load(s3_file)
+except FileNotFoundError:
+    print("File not found")
 
 
 # URL de la API para obtener comentarios de un video específico
