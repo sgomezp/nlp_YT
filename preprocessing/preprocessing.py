@@ -11,7 +11,7 @@ from sklearn.base import BaseEstimator, TransformerMixin
 nlp = spacy.load("en_core_web_sm")
 
 # Adding the emoji parser to SpaCy's pipeline
-nlp.add_pipe("emoji", first=True)
+nlp.add_pipe("emoji", last=True)
 
 # Custom Transformer Class for our text preprocessing function
 class TextPreprocessor(BaseEstimator, TransformerMixin):
